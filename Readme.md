@@ -6,16 +6,12 @@ Supports dark/light themes, category badges, animations, and persistent storage 
 ---
 
 ## 🔗 Live Demo
-[Add your live demo link here](#)
+[https://muhammad-abdul-hannan.github.io/Task-Reminder-Dashboard/](#)
 
 ---
 
 ## 🖼 Screenshot
-![Task Dashboard Screenshot](./assets/screenshot.png)  
-*Replace this image with your website screenshot. To add a screenshot:*
-1. Take a screenshot of your website (full page or main dashboard).
-2. Save it in your project folder, e.g., `assets/screenshot.png`.
-3. Keep the relative path in the markdown as above.
+![Task Dashboard Screenshot](./assets/Task-Reminder-Dashboard.png)  
 
 ---
 
@@ -39,7 +35,7 @@ task-reminder-dashboard/
 ├── js/
 │ └── script.js
 ├── assets/
-│ └── screenshot.png (add your screenshot here)
+│ └── Task-Reminder-Dashboard.png, lottie files.
 └── README.md
 
 
