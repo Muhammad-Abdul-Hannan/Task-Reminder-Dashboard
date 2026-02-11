@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <!-- Google Fonts -->
+    <!-- Playpen Sans / Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Exo 2 / Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Toastify -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <title>Task Reminder Dashboard</title>
+  </head>
+
+  <body>
+    <section class="container task-section">
+      <!-- ================= USER FORM ================= -->
+      <div class="user_data">
+        <form onsubmit="addTask(event)">
+          <h2 class="form_heading">Add Task</h2>
+
+          <input type="text" id="ttitle" placeholder="Task Title" required />
+
+          <input type="text" id="category" placeholder="Category" required />
+
+          <span class="time_select">
+            <label for="time">Select Time</label>
+            <input type="datetime-local" step="1" id="time" required />
+          </span>
+
+          <textarea
+            id="description"
+            placeholder="I'll do JS practice projects like calculator build..."
+          ></textarea>
+
+          <button type="submit" class="inputbtn">Add Task</button>
+        </form>
+      </div>
+
+      <!-- ================= TASK LIST ================= -->
+      <div class="task_list">
+        <h4
+          id="task_list_heading"
+          style="text-align: center; margin-bottom: 18px"
+        ></h4>
+        <lottie-player
+          src="./assets/man-with-task-list.json"
+          background="transparent"
+          speed="1"
+          style="width: 100%; height: 100%"
+          loop
+          autoplay
+          id="tasklottie"
+          class="zoom-out"
+        >
+        </lottie-player>
+        <ul id="taskList">
+          <!-- Tasks rendered dynamically -->
+        </ul>
+
+        <div id="clear_Button">
+          <!-- Clear button inserted dynamically -->
+        </div>
+      </div>
+    </section>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="icon sun">☀️</span>
+      <span class="icon moon">🌙</span>
+      <span class="thumb"></span>
+    </button>
+
+    <section class="container detail-section" id="detail-section">
+      <div class="detail-header">
+        <h2 class="detail_heading">Task Detail Panel</h2>
+        <div class="task-stats">
+          <div>
+            <span class="totalT" id="totalT">Total Tasks: 12</span>
+            <span class="pendingT" id="pendingT">Pending Tasks: 12</span>
+          </div>
+          <div>
+            <span class="delayedT" id="delayedT">Delayed Tasks: 12</span>
+            <span class="urgentT" id="urgentT">Delayed Tasks: 12</span>
+            <span class="completedT" id="completedT">Completed Tasks: 12</span>
+          </div>
+        </div>
+      </div>
+      <div class="task-detail" id="task-detail">
+        <h2>Task Title: <span onclick="textToInput(this)">Task 1</span></h2>
+        <h4>Category: <span onclick="textToInput(this)">T1</span></h4>
+        <h6>
+          Deadline:
+          <span onclick="textToInput(this)">10/02/26 05:01:16 pm</span>
+          <p>Remaining Time: &nbsp;<span>8 days</span></p>
+        </h6>
+        <div>
+          <div class="description" onclick="textToInput(this)">
+            Description: Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Nesciunt, laborum eveniet odit expedita eaque doloribus rem.
+            Ratione pariatur dignissimos dolorem eaque labore nisi facilis!Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, laborum
+            eveniet odit expedita eaque doloribus rem. Ratione pariatur
+            dignissimos dolorem eaque labore nisi facilis!Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Nesciunt, laborum eveniet odit
+            expedita eaque doloribus rem. Ratione pariatur dignissimos dolorem
+            eaque labore nisi facilis!Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Nesciunt, laborum eveniet odit expedita eaque
+            doloribus rem. Ratione pariatur dignissimos dolorem eaque labore
+            nisi facilis!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="./js/script.js"></script>
+
+    <!-- Lottie Animation -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- Toastify -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </body>
+</html>
